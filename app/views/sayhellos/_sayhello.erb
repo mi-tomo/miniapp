@@ -1,0 +1,43 @@
+<div class="contentarea"> 
+  <div class="left">    
+    <div class="left__head">  
+      <div class="left__head__icon"> 
+        <span>
+    
+      <%= link_to '投稿者ページ', "/sayhellos/#{hello.id}", method: :get %>
+      
+        <% if user_signed_in? && current_user.id == hello.user_id %>
+        
+          <%= link_to '編集', "/sayhellos/#{hello.id}/edit", method: :get %>
+
+          <%= link_to '削除', "/sayhellos/#{hello.id}", method: :delete %>
+          </span>
+        <% end %>
+      </div> 
+    </div> 
+
+    <div class="left__content" style="background-image: url(<%= hello.image %>);">
+    </div> 
+
+  </div> 
+
+  <div class="right">
+
+    <div class="right__head">  
+      <span>←←←投稿者:    </span><%= hello.user.nickname %>
+    </div> 
+
+    <div class="right__content">  
+    <%= simple_format(hello.text) %>
+    </div> 
+
+  </div> 
+
+</div> 
+  
+
+
+
+
+
+

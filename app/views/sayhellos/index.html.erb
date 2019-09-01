@@ -1,0 +1,11 @@
+ <div class="contentindex" >
+   
+   
+       <% @sayhello.each do |hello| %>
+     
+         <%= render partial: "sayhello", locals: { hello: hello} %>
+       <% end %>
+  
+ 
+</div>
+  
